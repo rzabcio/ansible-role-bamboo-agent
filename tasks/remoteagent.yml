@@ -7,9 +7,9 @@
     - http_proxy is defined
 
 - name: "install openjdk-{{ openjdk_version }} (yum)"
-  yum:
+  package:
     name: "java-{{ openjdk_version }}-openjdk"
-    state: installed
+    state: present
   when:
     - install_jdk
     - ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
