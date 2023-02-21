@@ -55,6 +55,8 @@
     url: "{{ bamboo_master_url }}/agentServer/agentInstaller/atlassian-bamboo-agent-installer-{{ bamboo_master_version }}.jar"
     dest: "{{ bamboo_agent_application_folder }}"
     timeout: 30
+    owner: "{{ bamboo_agent_user }}"
+    group: "{{ bamboo_agent_user }}"
   when: data_folder.changed
   
 - name: Install bamboo agent
